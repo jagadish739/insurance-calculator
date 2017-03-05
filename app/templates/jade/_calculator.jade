@@ -2,9 +2,9 @@
     h1 Kalkulator
     .calculator_inner
         h2 Suma ubezpieczenia
-        rzslider(rz-slider-floor="0" rz-slider-ceil="450" rz-slider-translate="translate")
+        rzslider( rz-slider-model="slider.value" rz-slider-options="slider.options")
         h2 Ilość rat
-        .calculator__inner--installment
+        .calculator_inner--installment
             .btn.btn--quantity
                 p 1 rata
             .btn.btn--quantity
@@ -14,7 +14,7 @@
             .btn.btn--quantity
                 p 4 raty
         h2 Stan
-        .calculator__inner--state
+        .calculator_inner--state
             .btn.btn--state
                 p brak szkód
             .btn.btn--state
