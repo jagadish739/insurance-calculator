@@ -1,0 +1,22 @@
+{
+  "name": "insurance_calculator",
+  "description": "Insurance Calculator Task",
+  "main": "app.js",
+  "authors": [
+    "Jakub Chrząstek"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/dependencies",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angularjs-slider": "^6.0.2"
+  }
+}
