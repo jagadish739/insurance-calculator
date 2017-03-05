@@ -2,8 +2,10 @@
     h1 Kalkulator
     .calculator_inner
         h2 Suma ubezpieczenia
-        rzslider( rz-slider-model="slider.value" rz-slider-options="slider.options")
-        h2 Ilość rat
+        .calculator_inner--slider
+            rzslider( rz-slider-model="slider.value" rz-slider-options="slider.options")
+            hr
+        h2 Ilość rat {{test}}
         .calculator_inner--installment
             .btn.btn--quantity
                 p 1 rata
@@ -23,5 +25,5 @@
         .calculator_inner--bottom
             .btn.btn--calculate
                 p Oblicz rate
-            input(type="text" ng-model="cena")
+            input(type="text" ng-model="slider.value | currency : $")
 
