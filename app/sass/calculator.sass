@@ -13,7 +13,7 @@
         font-size: 24px
         font-weight: 300
         color: #ffffff
-        padding: 20px 32px
+        padding: 5px 20px
     .calculator_inner
         font-size: 14px
         color: #2c3e50
@@ -41,12 +41,18 @@
             justify-content: space-around
         .btn
             border-radius: 18.5px
+            color: #9dbdc6
             p
                 font-size: 14px
                 padding: 0 70px
                 text-align: center
                 font-weight: bold
-                color: #9dbdc6
+            &:hover
+                background: linear-gradient(45deg, #ff3d2e, #ff252c)
+                font-size: 16px
+                color: #ffffff
+                font-weight: bold
+                cursor: pointer
         .btn--quantity,
         .btn--state
             background-color: #daeaef
@@ -72,4 +78,4 @@
                 font-size: 20px
                 margin: 20px
                 padding: 10px 30px 10px
-
+                box-shadow: 0px 11px 24px 0 rgba(14, 42, 59, 0.25)

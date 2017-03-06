@@ -7,7 +7,7 @@
             hr
         h2 Ilość rat {{test}}
         .calculator_inner--installment
-            .btn.btn--quantity
+            .btn.btn--quantity(ng-click="installment()" ng-class="{'btn--active' : toggle}")
                 p 1 rata
             .btn.btn--quantity
                 p 2 raty
@@ -25,5 +25,5 @@
         .calculator_inner--bottom
             .btn.btn--calculate
                 p Oblicz rate
-            input(type="text" ng-model="slider.value | currency : $")
+            input(type="text" ng-model="rata")
 
