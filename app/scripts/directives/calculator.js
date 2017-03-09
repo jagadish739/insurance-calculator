@@ -21,7 +21,7 @@
                             }
                         };
 
-                        const Value = [{
+                        const range = [{
                             min: 100,
                             max: 1000,
                             value: 20
@@ -47,7 +47,7 @@
                         $scope.$watch('slider.value', function findElement(value) {
                             const iterator = (item) =>
                                 item.min <= value && item.max >= value;
-                            let obj = Value.find(iterator);
+                            let obj = range.find(iterator);
                             $scope.rata = obj.value;
                         })
 
@@ -62,6 +62,88 @@
                                 isClicked = !isClicked;
                             }
                         }
+
+                        $scope.isActive = [{
+                            one: false
+                        }, {
+                            two: false
+                        }, {
+                            three: false
+                        }, {
+                            four: false
+                        }, {
+                            five: false
+                        }, {
+                            six: false
+                        }];
+
+
+                        $scope.oneInstalment = () => {
+                            $scope.isActive[0].one = !$scope.isActive[0].one;
+                            if ($scope.isActive[0].one) {
+                                $scope.indirect = $scope.rata * 0.98;
+                                console.log($scope.indirect);
+                            } else {
+                                $scope.indirect = $scope.rata;
+                                console.log($scope.indirect);
+                            }
+                        };
+
+                        $scope.twoInstalment = () => {
+                            $scope.isActive[1].two = !$scope.isActive[1].two;
+                            if ($scope.isActive[1].two) {
+                                $scope.indirect = $scope.rata * 1.02;
+                                console.log($scope.indirect);
+                            } else {
+                                $scope.indirect = $scope.rata;
+                                console.log($scope.indirect);
+                            }
+                        };
+
+                        $scope.threeInstalment = () => {
+                            $scope.isActive[2].three = !$scope.isActive[2].three;
+                            if ($scope.isActive[2].three) {
+                                $scope.indirect = $scope.rata * 1.03;
+                                console.log($scope.indirect);
+                            } else {
+                                $scope.indirect = $scope.rata;
+                                console.log($scope.indirect);
+                            }
+                        };
+
+                        $scope.fourInstalment = () => {
+                            $scope.isActive[3].four = !$scope.isActive[3].four;
+                            if ($scope.isActive[3].four) {
+                                $scope.indirect = $scope.rata * 1.04;
+                                console.log($scope.indirect);
+                            } else {
+                                $scope.indirect = $scope.rata;
+                                console.log($scope.indirect);
+                            }
+                        };
+
+                        $scope.firstState = (indirect) => {
+                            $scope.isActive[4].five = !$scope.isActive[4].five;
+                            if ($scope.isActive[4].five) {
+                                $scope.final = $scope.indirect * 0.95;
+                                console.log($scope.final);
+                            } else {
+                                $scope.final = indirect;
+                                console.log($scope.indirect);
+                            }
+                        }
+
+                        $scope.secondState = (indirect) => {
+                            $scope.isActive[5].six = !$scope.isActive[5].six;
+                            if ($scope.isActive[5].six) {
+                                $scope.final = $scope.indirect * 1.08;
+                                console.log($scope.final);
+                            } else {
+                                $scope.final = indirect;
+                                console.log($scope.indirect);
+                            }
+                        };
+
                     } //end controller
             } //end return
         }]);

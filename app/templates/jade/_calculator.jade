@@ -7,23 +7,23 @@
             hr
         h2 Ilość rat {{test}}
         .calculator_inner--installment
-            .btn.btn--quantity(ng-click="installment()" ng-class="{'btn--active' : toggle}")
+            .btn.btn--quantity(ng-class="{'active' : isActive[0].one}" ng-click="oneInstalment()")
                 p 1 rata
-            .btn.btn--quantity
+            .btn.btn--quantity(ng-class="{'active' : isActive[1].two}" ng-click="twoInstalment()")
                 p 2 raty
-            .btn.btn--quantity
+            .btn.btn--quantity(ng-class="{'active' : isActive[2].three}" ng-click="threeInstalment()")
                 p 3 raty
-            .btn.btn--quantity
+            .btn.btn--quantity(ng-class="{'active' : isActive[3].four}" ng-click="fourInstalment()")
                 p 4 raty
         h2 Stan
         .calculator_inner--state
-            .btn.btn--state
+            .btn.btn--state(ng-class="{'active' : isActive[4].five}" ng-click="firstState()")
                 p brak szkód
-            .btn.btn--state
+            .btn.btn--state(ng-class="{'active' : isActive[5].six}" ng-click="secondState()")
                 p wyrządzona szkoda
             p Brak wyboru oznacza nowego klienta bez przeszłości
         .calculator_inner--bottom
             .btn.btn--calculate
                 p Oblicz rate
-            input(type="text" ng-model="rata")
+            input(type="text" ng-model="final")
 

@@ -3,11 +3,13 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     jade = require('gulp-jade'),
     concat = require('gulp-concat'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cleanCSS = require('gulp-clean-css');
 
-    var jsFilePath = function(file) {
-        return './app/scripts/' + file + '.js';
-    }
+var jsFilePath = function(file) {
+    return './app/scripts/' + file + '.js';
+}
 
 gulp.task('javascript', () => {
     return gulp.src([
@@ -38,6 +40,11 @@ gulp.task('sass', () => {
         .pipe(sass({
             outputStyle: 'compressed'
         }).on('error', sass.logError))
+       .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(cleanCSS())
         .pipe(gulp.dest('./app/public/css/'))
         .pipe(connect.reload());
 
